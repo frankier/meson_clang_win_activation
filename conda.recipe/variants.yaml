@@ -1,0 +1,6 @@
+cxx_compiler:
+  - if: win
+    then:
+      - clang-cl
+    else:
+      - clangxx

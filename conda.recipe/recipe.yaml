@@ -1,0 +1,33 @@
+context:
+  name: meson_clang_win_activation
+  version: "0.0.1"
+
+package:
+  name: ${{ name }}
+  version: ${{ version }}
+
+source:
+  path: ..
+
+build:
+  # Prioritize builds with a higher microarch level
+  number: 0
+  script:
+    - meson setup build && meson compile -C build
+  python:
+    version_independent: true
+
+requirements:
+  build:
+    - ${{ compiler('cxx') }}
+  host:
+    - meson
+    - ninja
+
+about:
+  homepage: https://example.com/
+  license: MIT
+  license_file:
+    - LICENSE
+  summary: Example
+  repository: https://example.com/
