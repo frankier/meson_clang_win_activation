@@ -1,4 +1,4 @@
-These repo shows an bug or at least an unfortunate interaction between Meson, LLVM's clang-cl driver and passing linker flags containing `/link` through %LDFLAGS%.
+These repo shows an bug or at least an unfortunate interaction between Meson, LLVM's clang-cl driver and passing linker flags containing `/link` through `%LDFLAGS%`.
 
 There are a few ways to see the problem.
 
@@ -20,3 +20,5 @@ The actual error occurs during Meson's sanity check when a command line with `/l
  │ │ -----
  │ │ meson.build:1:0: ERROR: Compiler clang-cl.exe cannot compile programs.
 ```
+
+Note that when MSVC `link.exe` is used, this just results in a warning.
